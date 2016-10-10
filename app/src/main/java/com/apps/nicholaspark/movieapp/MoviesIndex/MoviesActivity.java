@@ -21,7 +21,6 @@ public class MoviesActivity extends AppCompatActivity implements MoviesIndexFrag
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movies);
 
-
         MoviesIndexFragment fragment = MoviesIndexFragment.newInstance("","");
         getSupportFragmentManager().beginTransaction().add(R.id.frameLayout,fragment).commit();
         DaggerMoviesComponent.builder()
@@ -29,8 +28,9 @@ public class MoviesActivity extends AppCompatActivity implements MoviesIndexFrag
                 .moviesPresenterModule(new MoviesPresenterModule(fragment))
                 .build()
                 .inject(this);
-
     }
+
+
 
     @Override
     public void onFragmentInteraction(Uri uri) {

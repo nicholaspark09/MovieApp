@@ -12,11 +12,11 @@ import rx.Observable;
 
 public interface MovieDataSource {
 
+
+
     Observable<List<Movie>> getMovies(String page, String year);
-    Observable<Movie> getMovie();
-
-
-
+    Observable<Movie> getMovie(@NonNull int movieId);
     void deleteMovie(@NonNull int movieId);
     void deleteAllMovies();
+    void refreshMovies();
 }

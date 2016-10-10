@@ -33,6 +33,8 @@ public class MoviesLocalDataSource implements MovieDataSource{
     }
 
 
+
+
     @Override
     public Observable<List<Movie>> getMovies(String page, String year) {
         return mDb.createQuery(MoviesPersistenceContract.MovieEntry.TABLE_NAME,"SELECT * FROM "+MoviesPersistenceContract.MovieEntry.TABLE_NAME)
@@ -48,7 +50,7 @@ public class MoviesLocalDataSource implements MovieDataSource{
     }
 
     @Override
-    public Observable<Movie> getMovie() {
+    public Observable<Movie> getMovie(@NonNull int movieId) {
         return null;
     }
 
@@ -59,6 +61,11 @@ public class MoviesLocalDataSource implements MovieDataSource{
 
     @Override
     public void deleteAllMovies() {
+
+    }
+
+    @Override
+    public void refreshMovies() {
 
     }
 }

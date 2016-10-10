@@ -13,6 +13,9 @@ import javax.inject.Inject;
 
 import retrofit2.Retrofit;
 import rx.Observable;
+import rx.Observer;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 /**
  * Created by nicholaspark on 10/8/16.
@@ -52,9 +55,10 @@ public class MoviesRemoteDataSource implements MovieDataSource {
         return apiService.getMovies(params);
     }
 
+
     @Override
-    public Observable<Movie> getMovie() {
-        return apiService.getMovie(0);
+    public Observable<Movie> getMovie(@NonNull int movieId) {
+        return null;
     }
 
     @Override
@@ -64,6 +68,11 @@ public class MoviesRemoteDataSource implements MovieDataSource {
 
     @Override
     public void deleteAllMovies() {
+
+    }
+
+    @Override
+    public void refreshMovies() {
 
     }
 
